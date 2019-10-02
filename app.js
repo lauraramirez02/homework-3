@@ -18,6 +18,11 @@ const start_li = '<li>'
 const end_li = '</li>'
 var output = start_tag
 
+for (const dept of org1_depts){
+    output += start_li + dept.name + end_li
+}
+output += end_tag;
+
 for (let a=0, b=org1_depts.length; a<b; a++) {
     var objNF= JSON.stringify(org1_depts[a].name);
     var objF= objNF.replace(/\"/g, "")
