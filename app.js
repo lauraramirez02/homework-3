@@ -12,6 +12,12 @@ const org1_depts = [
 
     },
 ]
+const start_tag = '<ul>'
+const end_tag = '</ul>'
+const start_li = '<li>'
+const end_li = '</li>'
+var output = start_tag
+
 
 const org2_depts = [
     {
@@ -29,23 +35,3 @@ const org2_depts = [
         children: [{ name: 'investment', children: [] }],
     },
 ]
-
-function listOrg(orgData, targetUL){
-    var i;
-    for (i=0; i <orgData,length; i++) {
-        if (orgData[i].hasOwnProperty('name')) {
-            var nameText= document.createTextNode(orgData[i].name);
-            var newLI= document.createElement('li');
-            newLI.appendChild(nameText);
-            targetUL.appendChild(newLi);
-        }
-        if (orgData[i].hasOwnProperty('children')){
-            var newUL = document.createElement('ul');
-            var lowUl = targetUL.appendChild(newUL);
-            var lowUL = targetUL.querySelector('ul');
-            listOrg(orgData[i].children.lowUL);
-        }
-    }
-}
-PrintDepts(org1_depts,document.getElementById("org1"));
-PrintDepts(org2_depts,document.getElementById("org2"));
