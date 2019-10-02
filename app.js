@@ -12,8 +12,8 @@ const org1_depts = [
 
     },
 ]
-const start_tag = '<ul>'
-const end_tag = '</ul>'
+const start_tag = '<ol>'
+const end_tag = '</ol>'
 const start_li = '<li>'
 const end_li = '</li>'
 var output = start_tag
