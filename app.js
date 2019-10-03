@@ -34,3 +34,20 @@ output += end_tag
 
 const outputDiv = document.getElementById('output')
 outputDiv.innerHTML = output
+
+const org2_depts = [
+    {
+        name: 'accounting',
+        children: [
+            { name: 'accounting payable', children: [] },
+            {
+                name: 'accounting receivable',
+                children: [{ name: 'cash', children: [] }, { name: 'check', children: [] }],
+            },
+        ],
+    },
+    {
+        name: 'finance',
+        children: [{ name: 'investment', children: [] }],
+    },
+]
