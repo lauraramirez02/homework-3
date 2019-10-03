@@ -17,8 +17,10 @@ const start_li = '<li>'
 const end_li = '</li>'
 
 let output = start_tag
-for (const dept of org1_depts){
+for (const dept of org1_depts){
   output += start_li + dept.name + end_li
+if (output = depts.children) 
+    then, start_li + dept.name + depts.children + end_li
 }
 output += end_tag;
 
