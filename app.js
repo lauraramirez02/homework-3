@@ -31,17 +31,21 @@ const org2_depts=[
 
 function PrintDepts(depts) {
     let docul = document.createElement('ul');
+    
     docul.id='docul';
+    
     for (let i = 0; i < depts.length; i++) {
         let x = depts[i];
         if (x[1] !== undefined) {
             let docul2 = document.createElement('ul');
             docul2.id='docul2';
+            
             for (let i2 = 0; i2 < x.length; i2++) {
                 let y = x[i2];
                 if (y[1] !== undefined) {
                     let docul3 = document.createElement('ul');
                     docul3.id='docul3';
+                    
                     for (let i3 = 0; i3 < y.length; i3++) {
                         let z = y[i3];
                         let newlistitem3=document.createElement('li');
@@ -63,6 +67,9 @@ function PrintDepts(depts) {
             docul.appendChild(newlistitem);
             } 
     }
+}
+function PrintDepts(depts) {
+    return depts.name;
 }
 
 PrintDepts(org1_depts);
