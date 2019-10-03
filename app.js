@@ -20,12 +20,10 @@ const end_li = '</li>'
 let output = start_tag
 for (const dept of org1_depts){
   output += start_li + dept.name + end_li
+  output += start_li + children.name + end_li
 }
 output += end_tag;
 
-for (const dept of org1_depts){
-    output += start_li + children.name + end_li
-}
 
 for (let a = 0, b = org1_depts.length; a < b; a++) {
     let objNF = JSON.stringify(org1_depts[a].name);
