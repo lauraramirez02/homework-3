@@ -31,7 +31,6 @@ const org2_depts=[
 
 function PrintDepts(depts) {
     let docul = document.createElement('ul');
-    
     docul.id='docul';
     
     for (let i = 0; i < depts.length; i++) {
@@ -53,11 +52,11 @@ function PrintDepts(depts) {
                         newlistitem3.appendChild(listvalue3);
                         docul3.appendChild(newlistitem3);
                         }
-                } else {
-                    let newlistitem2=document.createElement('li');
-                    let listvalue2=document.createTextNode(y);
-                    newlistitem2.appendChild(listvalue2);
-                    docul2.appendChild(newlistitem2);
+                    } else {
+                        let newlistitem2=document.createElement('li');
+                        let listvalue2=document.createTextNode(y);
+                        newlistitem2.appendChild(listvalue2);
+                        docul2.appendChild(newlistitem2);
                     } 
             }
         } else {
