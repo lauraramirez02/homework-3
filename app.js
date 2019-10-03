@@ -1,9 +1,9 @@
-const org1_depts = [
+const org1_depts=[
     {
-        name: 'accounting' ,
+        name: 'accounting',
         children: [
-            { name: 'accounting payable', children: [] },
-            { name: 'accounting receivable', children: [] },
+            {name: 'accounting payable', children: []},
+            {name: 'accounting receivable', children: []},
         ],
     },
     {
@@ -11,42 +11,59 @@ const org1_depts = [
         children: [],
     },
 ]
-const start_tag = '<ul>'
-const end_tag = '</ul>'
-const start_li = '<li>'
-const end_li = '</li>'
 
-let output = start_tag
-for (const dept of org1_depts){
-  output += start_li + dept.name + end_li
-}
-output += end_tag;
-
-for (let a = 0, b = org1_depts.length; a < b; a++) {
-    let objNF = JSON.stringify(org1_depts[a].name);
-    let objF = objNF.replace(/\"/g, "")
-    output += start_li + objF;
-}
-
-output += end_li
-output += end_tag
-
-const outputDiv = document.getElementById('output')
-outputDiv.innerHTML = output
-
-const org2_depts = [
-    {
-        name: 'accounting',
-        children: [
-            { name: 'accounting payable', children: [] },
-            {
-                name: 'accounting receivable',
-                children: [{ name: 'cash', children: [] }, { name: 'check', children: [] }],
-            },
-        ],
-    },
-    {
-        name: 'finance',
-        children: [{ name: 'investment', children: [] }],
-    },
+const org2_depts=[
+    {
+        name: 'accounting',
+        children: [
+            {name: 'accounting payable', children: []},
+            {
+                name: 'accounting receivable',
+                children: [{name: 'cash', children: []}, {name: 'check', children: []}],
+            },
+        ],
+    },
+    {
+        name: 'finance',
+        children: [{name: 'investment', children: []}],
+    },
 ]
+
+function PrintDepts(depts) {
+    let docul = document.createElement('ul');
+    docul.id='docul';
+    for (let i = 0; i < depts.length; i++) {
+        let x = depts[i];
+        if (x[1] !== undefined) {
+            let docul2 = document.createElement('ul');
+            docul2.id='docul2';
+            for (let i2 = 0; i2 < x.length; i2++) {
+                let y = x[i2];
+                if (y[1] !== undefined) {
+                    let docul3 = document.createElement('ul');
+                    docul3.id='docul3';
+                    for (let i3 = 0; i3 < y.length; i3++) {
+                        let z = y[i3];
+                        let newlistitem3=document.createElement('li');
+                        let listvalue3=document.createTextNode(z);
+                        newlistitem3.appendChild(listvalue3);
+                        docul3.appendChild(newlistitem3);
+                        }
+                } else {
+                    let newlistitem2=document.createElement('li');
+                    let listvalue2=document.createTextNode(y);
+                    newlistitem2.appendChild(listvalue2);
+                    docul2.appendChild(newlistitem2);
+                    } 
+            }
+        } else {
+            let newlistitem=document.createElement('li');
+            let listvalue=document.createTextNode(x);
+            newlistitem.appendChild(listvalue);
+            docul.appendChild(newlistitem);
+            } 
+    }
+}
+
+PrintDepts(org1_depts);
+PrintDepts(org2_depts);
