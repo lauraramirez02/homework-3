@@ -20,7 +20,7 @@ const end_li = '</li>'
 let output = start_tag
 for (const dept of org1_depts){
   output += start_li + dept.name + end_li
-  output += start_li + children.name + end_li
+  output += start_li + dept.children + end_li
 }
 output += end_tag;
 
