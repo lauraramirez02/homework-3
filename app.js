@@ -36,7 +36,7 @@ function PrintDepts(depts, parent) {
 
     for(let i=0; i < depts.length; i++) {
         let currentItem = depts[i]
-        var listItemE1 = document.createElement('li')
+        var listItemEl = document.createElement('li')
         listItemEl.innerHTML = currentItem.name
         listEl.appendChild(listItemEl)
         if(currentItem.children.length) {
