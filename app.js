@@ -21,8 +21,6 @@ for (const dept of org1_depts){
   output += start_li + dept.name + end_li
 }
 output += end_tag;
-<h2>Organization 1</h2>
-<h2>Organization 2</h2>
 
 for (let a = 0, b = org1_depts.length; a < b; a++) {
     let objNF = JSON.stringify(org1_depts[a].name);
