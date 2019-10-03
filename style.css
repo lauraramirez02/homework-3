@@ -5,8 +5,10 @@ h2{
     text-align: center;
 }
 div>ul{
-    border-color: green;
-    border-style: solid;
     margin: auto;
-    width: 300px;
+    width: 40%;
+    border: 3px solid green;
+    padding: 10px;
+    margin: auto;
+    list-style: none;
 }
