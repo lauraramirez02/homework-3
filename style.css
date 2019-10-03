@@ -6,7 +6,7 @@ h2{
 }
 div>ul{
     margin: auto;
-    width: 100%;
+    width: 80%;
     border: 2px solid green;
     padding: 5px;
     list-style: none;
